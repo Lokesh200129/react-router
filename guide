@@ -1,0 +1,38 @@
+react is usefull for updating ui seamlessly 
+only one root is created in dom we allways repaint it when our page component changes
+only updated component are updated
+this happens with the help of virtual dom which is created by createNode functioon in the main file
+virtual dom id compared with browser dom and the diff component being  changed
+when we try to updte ui it take some time because it may happen that any network being called it  my update ui instantly 
+so to prevent this we may want to pause the operation this hapeen with the help og fiber algo
+
+The createRoot create's its own DOM and then compare it with the web browser's DOM and only update those components which are actually updated.
+2.But the browser removes the whole DOM and then recrates the whole DOM with the updated values this is called reload.
+3. However virtual DOM tracks whole DOM like a tree like structure and updates only those values which were only changed.
+4. But some values depends on network call so if we update a value it might get update immediately via a network call.
+5. So we will have to update it again. To avoid this overhead we can drop the updation calls for the immediate value update.
+6. The current algo used by the React is called the React Fibre algo.
+7. The algo react uses to differentiate the web browser's tree and React's tree formed through create root is called reconciliation.
+8. Reconciliation is the algo behind what popularly known as the Virtual-DOM.
+9.In UI it is not necessary for every update to be applied immediately. */
+
+**Hooks**
+
+1. useState(initial value) --> use to rerender the component on the basis of the varible
+
+
+
+Context-api = used to avoid props drilling when passed from parent element to child element
+    useContext hook is used to fetch props from Context
+    createContext() fn is used to create new context
+    createContext().Provider fn is used to set values or passing props
+
+REDUX/REACT-REDUX
+Redux is independent library 
+used to manage state in term of data update and data fetching , through reducers
+
+Main Component of Redux
+    STORE- It is a centralised Store Where we store data and fetch data
+    REDUSERS - reducers is simply object of the function used to perform the action
+    useSelector - is use to select the values from store
+    useDispatch is used to send any value from the store 
